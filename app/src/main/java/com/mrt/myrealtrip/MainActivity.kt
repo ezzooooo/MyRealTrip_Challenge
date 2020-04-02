@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
         mAdapter.setHasStableIds(true)
         mAdapter.setItemClickListener( object: NewsAdapter.ItemClickListener{
             override fun onClick(view: View, position: Int) {
-                println("SSS ${position}번 리스트 선택")
                 val intent = Intent(applicationContext, NewsWebviewActivity::class.java)
                 intent.putExtra(NEWS_TITLE, newsList[position].title)
                 intent.putExtra(NEWS_KEYWORD1, newsList[position].keyword_1)
@@ -143,8 +142,4 @@ class MainActivity : AppCompatActivity() {
             .show()
         news_list_progressBar.visibility = View.GONE
     }
-
-
-
-
 }
