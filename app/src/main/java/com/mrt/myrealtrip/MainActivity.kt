@@ -135,8 +135,18 @@ class MainActivity : AppCompatActivity() {
                                         keyword[2]
                                     )
                                 )
-                                CoroutineScope(Dispatchers.Main).launch {
-                                    mAdapter.notifyDataSetChanged()
+
+                                if(newsList.size < 8) {
+                                    if(newsList.size % 2 == 0) {
+                                        CoroutineScope(Dispatchers.Main).launch {
+                                            mAdapter.notifyDataSetChanged()
+                                        }
+                                    }
+                                }
+                                else if(newsList.size % 8 == 0) {
+                                    CoroutineScope(Dispatchers.Main).launch {
+                                        mAdapter.notifyDataSetChanged()
+                                    }
                                 }
                             }
                         }
@@ -151,5 +161,6 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(applicationContext, "최신 뉴스 상태입니다!", Toast.LENGTH_SHORT)
             .show()
         news_list_progressBar.visibility = View.GONE
+        mAdapter.notifyDataSetChanged()
     }
 }
