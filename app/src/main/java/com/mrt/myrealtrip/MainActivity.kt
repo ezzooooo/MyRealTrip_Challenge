@@ -25,13 +25,17 @@ class MainActivity : AppCompatActivity() {
     private val NEWS_KEYWORD2 = "newsKeyword2"
     private val NEWS_KEYWORD3 = "newsKeyword3"
     private val NEWS_URL = "newsUrl"
+    private var lastpubDate = ""
+
     private var newsList = arrayListOf<News>()
     private val mAdapter = NewsAdapter(this, newsList)
-    private var lastpubDate = ""
+    private lateinit var backPressCloseHandler:BackPressCloseHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        backPressCloseHandler = BackPressCloseHandler(this)
 
         val mSwipeRefreshLayout =  findViewById<SwipeRefreshLayout>(R.id.news_swipe_layout)
         mSwipeRefreshLayout.setOnRefreshListener {
@@ -58,14 +62,20 @@ class MainActivity : AppCompatActivity() {
         news_list_view.adapter = mAdapter
 
         val lm = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-        lm.initialPrefetchItemCount = 10
+        lm.initialPrefetchItemCount = 30
         news_list_view.layoutManager = lm
         news_list_view.setHasFixedSize(true)
         news_list_view.setItemViewCacheSize(40)
         news_list_view.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
         news_list_progressBar.visibility = View.VISIBLE
+
         loadNews()
+    }
+
+    override fun onBackPressed() {
+        //super.onBackPressed()
+        backPressCloseHandler.onBackPressed()
     }
 
     fun loadNews() = CoroutineScope(Dispatchers.Main).launch {

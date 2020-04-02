@@ -1,12 +1,10 @@
 package com.mrt.myrealtrip
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.webkit.WebChromeClient
-import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import kotlinx.android.synthetic.main.activity_news_webview.*
