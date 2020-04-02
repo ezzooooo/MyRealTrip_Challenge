@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">MyRealtrip</string>
+    <string name="main_icon_license">Flaticon\'s Smashicons</string>
+    <string name="rss_icon_license">Flaticon\'s Pixel perfect</string>
+    <string name="info_icon_license">Flaticon\'s monkik</string>
+    <string name="version">v 1.0</string>
+    <string name="description_text1">최신 뉴스를 간편하게!</string>
+    <string name="description_text2">요즘 많이 나오는 단어는?</string>
+    <string name="description_text3">뉴스를 클릭하면 원본 뉴스를 볼 수 있습니다.</string>
+    <string name="rss_link">https://news.google.com/rss</string>
+    <string name="main_icon">main_icon</string>
+    <string name="left_icon">left_icon</string>
+    <string name="right_icon">right_icon</string>
+    <string name="news_thumbnail">news_thumbnail</string>
+    <string name="news_title">News Title</string>
+    <string name="news_content">News Content</string>
+    <string name="keyword1">keyword1</string>
+    <string name="keyword2">keyword2</string>
+    <string name="keyword3">keyword3</string>
+    <string name="webview_title">[포토]뉴스 제목입니다</string>
+    <string name="webview_keyword1">키워드1</string>
+    <string name="webview_keyword2">키워드2</string>
+    <string name="webview_keyword3">키워드3</string>
+</resources>
